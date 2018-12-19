@@ -25,7 +25,7 @@ app.post('/personas/nuevo', (req, res) => {
     apellidos: req.body.apellidos,
     telefono: req.body.telefono
   }). then(() => {
-    res.json('Persona creada')
+    res.json({ respuesta: 'Persona creada' })
   })
 })
 
@@ -55,7 +55,7 @@ app.delete('/personas/:id', (req, res) => {
   Persona.destroy({
     where: { id: personaId }
   }).then(() => {
-    res.json('Persona Eliminada')
+    res.json({ respuesta: 'Persona Eliminada' })
   })
 })
 
